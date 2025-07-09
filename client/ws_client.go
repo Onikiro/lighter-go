@@ -116,6 +116,10 @@ func (c *WsClient) onMessage(raw []byte) error {
 	switch msg.Type {
 	case "connected":
 		// already subscribed in Run
+	case "ping":
+		if err := c.conn.WriteMessage(websocket.PongMessage, nil); err != nil {
+			return fmt.Errorf("pong reply error: %w", err)
+		}
 	case "subscribed/order_book":
 		return c.handleSubscribedOrderBook(msg)
 	case "update/order_book":
