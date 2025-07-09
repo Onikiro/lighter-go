@@ -124,6 +124,14 @@ func (c *WsClient) onMessage(raw []byte) error {
 	switch msg.Type {
 	case "connected":
 		// already subscribed in Run
+	case "ping":
+		log.Println("Received ping message, sending pong message")
+		pongMsg := map[string]string{"type": "pong"}
+		if err := c.conn.WriteJSON(pongMsg); err != nil {
+			log.Printf("failed to send pong message: %v", err)
+			return err
+		}
+		return nil
 	case "subscribed/order_book":
 		return c.handleSubscribedOrderBook(msg)
 	case "update/order_book":
