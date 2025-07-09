@@ -7,6 +7,7 @@ import (
 	"net/url"
 	"strings"
 	"sync"
+	"time"
 
 	"github.com/gorilla/websocket"
 )
@@ -89,6 +90,13 @@ func (c *WsClient) Run() error {
 	if err != nil {
 		return fmt.Errorf("dial error: %w", err)
 	}
+
+	c.conn.SetPingHandler(func(appData string) error {
+		log.Println("Received ping, sending pong")
+		deadline := time.Now().Add(5 * time.Second)
+		return c.conn.WriteControl(websocket.PongMessage, []byte(appData), deadline)
+	})
+
 	defer c.conn.Close()
 
 	// send initial subscriptions
