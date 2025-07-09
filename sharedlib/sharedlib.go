@@ -6,8 +6,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/elliottech/lighter-go/client"
-	"github.com/elliottech/lighter-go/types"
+	"github.com/Onikiro/lighter-go/client"
+	"github.com/Onikiro/lighter-go/types"
 	curve "github.com/elliottech/poseidon_crypto/curve/ecgfp5"
 	schnorr "github.com/elliottech/poseidon_crypto/signature/schnorr"
 	"github.com/ethereum/go-ethereum/common/hexutil"

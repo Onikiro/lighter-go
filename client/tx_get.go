@@ -3,8 +3,8 @@ package client
 import (
 	"fmt"
 
-	"github.com/elliottech/lighter-go/types"
-	"github.com/elliottech/lighter-go/types/txtypes"
+	"github.com/Onikiro/lighter-go/types"
+	"github.com/Onikiro/lighter-go/types/txtypes"
 	schnorr "github.com/elliottech/poseidon_crypto/signature/schnorr"
 )
 

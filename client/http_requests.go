@@ -10,7 +10,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/elliottech/lighter-go/types/txtypes"
+	"github.com/Onikiro/lighter-go/types/txtypes"
 )
 
 func (c *HTTPClient) parseResultStatus(respBody []byte) error {
