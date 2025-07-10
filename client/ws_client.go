@@ -234,12 +234,12 @@ func updateOrderBookState(state, delta OrderBook) OrderBook {
 }
 
 func mergeOrders(existing, updates []Order) []Order {
-	m := make(map[string]string)
+	m := make(map[decimal.Decimal]decimal.Decimal)
 	for _, ord := range existing {
 		m[ord.Price] = ord.Size
 	}
 	for _, upd := range updates {
-		if upd.Size == "0" {
+		if upd.Size == decimal.Zero {
 			// remove
 			delete(m, upd.Price)
 		} else {
