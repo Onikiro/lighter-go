@@ -42,8 +42,8 @@ type OrderBook struct {
 
 // Order represents a single order entry
 type Order struct {
-	Price string `json:"price"`
-	Size  string `json:"size"`
+	Price decimal.Decimal `json:"price"`
+	Size  decimal.Decimal `json:"size"`
 }
 
 // Account represents the account payload
