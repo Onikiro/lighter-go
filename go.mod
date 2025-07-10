@@ -8,6 +8,7 @@ require (
 	github.com/elliottech/poseidon_crypto v0.0.11
 	github.com/ethereum/go-ethereum v1.15.6
 	github.com/gorilla/websocket v1.4.2
+	github.com/shopspring/decimal v1.4.0
 )
 
 require (

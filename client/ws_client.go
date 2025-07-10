@@ -3,6 +3,7 @@
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/shopspring/decimal"
 	"log"
 	"net/url"
 	"strings"
@@ -57,27 +58,27 @@ type Account struct {
 }
 
 type AccountTradeDetail struct {
-	TradeID                          int64  `json:"trade_id"`
-	TxHash                           string `json:"tx_hash"`
-	Type                             string `json:"type"`
-	MarketID                         int    `json:"market_id"`
-	Size                             string `json:"size"`
-	Price                            string `json:"price"`
-	USDAmount                        string `json:"usd_amount"`
-	AskID                            int64  `json:"ask_id"`
-	BidID                            int64  `json:"bid_id"`
-	AskAccountID                     int    `json:"ask_account_id"`
-	BidAccountID                     int    `json:"bid_account_id"`
-	IsMakerAsk                       bool   `json:"is_maker_ask"`
-	BlockHeight                      int    `json:"block_height"`
-	Timestamp                        int64  `json:"timestamp"`
-	TakerPositionSizeBefore          string `json:"taker_position_size_before"`
-	TakerEntryQuoteBefore            string `json:"taker_entry_quote_before"`
-	TakerInitialMarginFractionBefore int    `json:"taker_initial_margin_fraction_before"`
-	TakerPositionSignChanged         bool   `json:"taker_position_sign_changed"`
-	MakerPositionSizeBefore          string `json:"maker_position_size_before"`
-	MakerEntryQuoteBefore            string `json:"maker_entry_quote_before"`
-	MakerInitialMarginFractionBefore int    `json:"maker_initial_margin_fraction_before"`
+	TradeID                          int64           `json:"trade_id"`
+	TxHash                           string          `json:"tx_hash"`
+	Type                             string          `json:"type"`
+	MarketID                         int             `json:"market_id"`
+	Size                             decimal.Decimal `json:"size"`
+	Price                            decimal.Decimal `json:"price"`
+	USDAmount                        decimal.Decimal `json:"usd_amount"`
+	AskID                            int64           `json:"ask_id"`
+	BidID                            int64           `json:"bid_id"`
+	AskAccountID                     int             `json:"ask_account_id"`
+	BidAccountID                     int             `json:"bid_account_id"`
+	IsMakerAsk                       bool            `json:"is_maker_ask"`
+	BlockHeight                      int             `json:"block_height"`
+	Timestamp                        int64           `json:"timestamp"`
+	TakerPositionSizeBefore          string          `json:"taker_position_size_before"`
+	TakerEntryQuoteBefore            string          `json:"taker_entry_quote_before"`
+	TakerInitialMarginFractionBefore int             `json:"taker_initial_margin_fraction_before"`
+	TakerPositionSignChanged         bool            `json:"taker_position_sign_changed"`
+	MakerPositionSizeBefore          string          `json:"maker_position_size_before"`
+	MakerEntryQuoteBefore            string          `json:"maker_entry_quote_before"`
+	MakerInitialMarginFractionBefore int             `json:"maker_initial_margin_fraction_before"`
 }
 
 // message generic wrapper
