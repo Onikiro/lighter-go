@@ -15,6 +15,7 @@ import (
 
 func (c *HTTPClient) parseResultStatus(respBody []byte) error {
 	resultStatus := &ResultCode{}
+	fmt.Println(string(respBody))
 	if err := json.Unmarshal(respBody, resultStatus); err != nil {
 		return err
 	}
